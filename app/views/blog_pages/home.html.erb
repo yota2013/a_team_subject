@@ -1,2 +1,14 @@
-<h1>BlogPages#home</h1>
-<p>Find me in app/views/blog_pages/home.html.erb</p>
+# coding: utf-8
+
+<h2><%=@title%></h2>
+
+<% @datas.each do |data| %>
+<div>
+  <h4><%= data.id %>:<%= data.name %></h4>
+  <ul class ="thred">
+  <li>いいね：<%= data.favo %></li>
+  <li>投稿時間：<%= data.created_at %></li>
+ </ul>
+</div>
+<hr>
+<% end %>

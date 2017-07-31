@@ -1,3 +1,16 @@
 // Place all the styles related to the blog_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li {
+  display: inline;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+  zoom: 1;
+}
+ 
+li+ li {
+  border-left: 0;
+  border-right: 1px solid #333;
+  zoom: 1;
+}
