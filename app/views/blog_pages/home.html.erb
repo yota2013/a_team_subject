@@ -12,7 +12,7 @@
 
 <% @datas.each do |data| %>
 <div>
-  <h4><%= data.id %>:<%= data.name %></h4>
+  <h4><%= data.id %> : <%= link_to data.name, '/comments/'+ data.id.to_s %></h4>
   <ul class ="thred">
   <li> いいね：<%= data.favo %> </li>
   <li> コメント数：<%= data.comments.count %> </li>
