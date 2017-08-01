@@ -2,12 +2,23 @@
 
 <h2><%=@title%></h2>
 
+<%= form_for @contribution,:url => create_path  do |f| %>
+  <div class="field">
+          <%= f.label :name, "投稿タイトル" %>
+          <%= f.text_field :name %>
+    </div>
+    <div class="actions">
+    <%= f.submit "投稿する" %>
+  </div>
+<% end %>
+
 <% @datas.each do |data| %>
 <div>
   <h4><%= data.id %>:<%= data.name %></h4>
   <ul class ="thred">
-  <li>いいね：<%= data.favo %></li>
-  <li>投稿時間：<%= data.created_at %></li>
+  <li> いいね：<%= data.favo %> </li>
+  <li> コメント数：<%= data.comments.count %> </li>
+  <li> 投稿時間：<%= data.created_at %> </li>
  </ul>
 </div>
 <hr>

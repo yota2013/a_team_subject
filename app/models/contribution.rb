@@ -1,5 +1,5 @@
 class Contribution < ApplicationRecord
-  validates :name, presence:true
-  validates :favo, presence:true
-  
+  has_many :comments
+  validates :name, :presence => true
+  validates :favo, :presence => true
 end

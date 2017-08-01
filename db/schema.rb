@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731092629) do
+ActiveRecord::Schema.define(version: 20170801041920) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "contribution_id"
+    t.text     "comment_data"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "contributions", force: :cascade do |t|
     t.string   "name"
-    t.integer  "favo"
-    t.datetime "thread_time"
+    t.integer  "ncoment",     default: 0
+    t.integer  "favo",        default: 0
     t.string   "thread_link"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end
