@@ -1,7 +1,5 @@
 # coding: utf-8
-
-<h2><%=@title%></h2>
-
+<% provide(:title, "Minblog") %>
 <%= form_for @contribution,:url => create_path  do |f| %>
   <div class="field">
           <%= f.label :name, "投稿タイトル" %>

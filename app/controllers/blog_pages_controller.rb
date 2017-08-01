@@ -1,7 +1,6 @@
 class BlogPagesController < ApplicationController
  
   def home
-   @title = "MinBlog"
    @datas = Contribution.all
    @contribution = Contribution.new
   end
@@ -14,6 +13,11 @@ class BlogPagesController < ApplicationController
   end
       
   def comments
+      puts params[:id]
+      
+  end
+  
+  def show
       
   end
 end
