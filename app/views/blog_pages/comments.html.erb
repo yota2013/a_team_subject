@@ -1,4 +1,31 @@
 <% provide(:title, "Minblog") %>
+<h4><%=link_to( "戻る", root_path)%></h4>
+<hr class ="dotted ">
+<div>
+  <ul class ="comment">
+  <li> <%=@contributionData.id %> : 投稿時間：<%= @contributionData.created_at %>  </li>
+  <li> <%= link_to("いいね",update_path(:id=>@contributionData.id),method: :post) %> ：<%=@contributionData.favo %> </li>
+  <h4><%=@contributionData.name %></h4>
+ </ul>
+</div>
 
-<h1>BlogPages#comments</h1>
-<p>Find me in app/views/blog_pages/comments.html.erb</p>
+<%= form_for @newComment,:url => commentCreate_path  do |f| %>
+  <div class="field">
+    <%= f.label :name, "コメント" %>
+    <%= f.text_field :comment_data , :size=>"60",:placeholder => "コメント内容を入力しよう" %>
+    <%= f.hidden_field :contribution_id%>
+    <%= f.submit "投稿する" %>
+  </div>
+<% end %>
+
+<hr>
+<% @commentsDatas.each do |data| %>
+<div>
+  <ul class ="comment">
+  <li> <strong><%= data.comment_data %> </strong></li>
+  <li> 投稿時間：<%= data.created_at %> </li>
+ <hr class ="dotted ">
+ </ul>
+</div>
+
+<% end %>

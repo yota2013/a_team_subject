@@ -1,12 +1,10 @@
 # coding: utf-8
 <% provide(:title, "Minblog") %>
-<%= form_for @contribution,:url => create_path  do |f| %>
+<%= form_for @contribution,:url => contributionCreate_path  do |f| %>
   <div class="field">
           <%= f.label :name, "投稿タイトル" %>
-          <%= f.text_field :name %>
-    </div>
-    <div class="actions">
-    <%= f.submit "投稿する" %>
+          <%= f.text_field :name , :size=>"60",:placeholder => "投稿内容を入力" %>
+          <%= f.submit "投稿する" %>
   </div>
 <% end %>
 
@@ -14,10 +12,10 @@
 <div>
   <h4><%= data.id %> : <%= link_to data.name, '/comments/'+ data.id.to_s %></h4>
   <ul class ="thred">
-  <li> いいね：<%= data.favo %> </li>
+  <li> <%= link_to("いいね",update_path(:id=>data.id),method: :post) %> ：<%=data.favo %> </li>
   <li> コメント数：<%= data.comments.count %> </li>
   <li> 投稿時間：<%= data.created_at %> </li>
+  <hr class ="dotted">
  </ul>
 </div>
-<hr>
 <% end %>

@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170801041920) do
 
   create_table "contributions", force: :cascade do |t|
     t.string   "name"
-    t.integer  "ncoment",     default: 0
+    t.integer  "ncomment",    default: 0
     t.integer  "favo",        default: 0
     t.string   "thread_link"
     t.datetime "created_at",              null: false
