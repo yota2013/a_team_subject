@@ -8,7 +8,7 @@
   </div>
 <% end %>
 
-<% @datas.each do |data| %>
+<% @datas.order('id').each do |data| %>
 <div>
   <h4><%= data.id %> : <%= link_to data.name, '/comments/'+ data.id.to_s %></h4>
   <ul class ="thred">

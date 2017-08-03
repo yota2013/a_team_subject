@@ -19,7 +19,7 @@
 <% end %>
 
 <hr>
-<% @commentsDatas.each do |data| %>
+<% @commentsDatas.order('id').each do |data| %>
 <div>
   <ul class ="comment">
   <li> <strong><%= data.comment_data %> </strong></li>
